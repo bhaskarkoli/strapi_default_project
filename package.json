@@ -1,0 +1,30 @@
+{
+  "name": "test1.techfs.ga",
+  "private": true,
+  "version": "0.1.0",
+  "description": "fdgdfds",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.1.11",
+    "@strapi/plugin-users-permissions": "4.1.11",
+    "@strapi/strapi": "4.1.11",
+    "better-sqlite3": "7.5.0"
+  },
+  "author": {
+    "name": "bhaskar koli"
+  },
+  "strapi": {
+    "uuid": "685e5690-6c25-42a4-8e9e-c9ee3d02bbe5"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
