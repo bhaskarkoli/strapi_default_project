@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_dropdown_service_dropdown_services",
+  "info": {
+    "displayName": "dropdownService",
+    "icon": "biohazard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

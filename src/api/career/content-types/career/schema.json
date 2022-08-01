@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "careers",
+  "info": {
+    "singularName": "career",
+    "pluralName": "careers",
+    "displayName": "career",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "experience": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "jobDescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "education": {
+      "type": "string",
+      "required": false,
+      "minLength": 5
+    },
+    "deadline": {
+      "type": "date",
+      "default": "2022-04-01",
+      "required": false
+    },
+    "careerSlug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "rolesAndResponsibilities": {
+      "type": "richtext"
+    },
+    "qualifications": {
+      "type": "richtext"
+    },
+    "experienceRequirements": {
+      "type": "richtext"
+    },
+    "whyWorkWithUs": {
+      "type": "richtext"
+    },
+    "metaTitle": {
+      "type": "string",
+      "required": true
+    },
+    "metaDescription": {
+      "type": "text",
+      "required": true
+    },
+    "metaKeywords": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "metaAuthor": {
+      "type": "string",
+      "required": true,
+      "default": "futurescapeadvertising"
+    }
+  }
+}

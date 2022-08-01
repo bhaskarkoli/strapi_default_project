@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "dropdown_services",
+  "info": {
+    "singularName": "dropdown-service",
+    "pluralName": "dropdown-services",
+    "displayName": "dropdownService"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dropdownService": {
+      "displayName": "dropdownService",
+      "type": "component",
+      "repeatable": true,
+      "component": "dropdown-service.dropdown-service"
+    }
+  }
+}

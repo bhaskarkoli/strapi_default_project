@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "privacy_policies",
+  "info": {
+    "singularName": "privacy-policy",
+    "pluralName": "privacy-policies",
+    "displayName": "privacy-policy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "privacy": {
+      "type": "component",
+      "repeatable": true,
+      "component": "terms.terms",
+      "required": true
+    },
+    "lastUpdated": {
+      "type": "date",
+      "default": "2022-04-01",
+      "required": true
+    }
+  }
+}
