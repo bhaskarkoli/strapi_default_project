@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_highlights_about_highlights",
+  "info": {
+    "displayName": "about-highlights",
+    "icon": "archway"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "flaticon_class_name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

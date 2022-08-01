@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_service_sub_category_service_sub_categories",
+  "info": {
+    "displayName": "serviceSubCategory",
+    "icon": "atlas",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logoAlt": {
+      "type": "string"
+    }
+  }
+}

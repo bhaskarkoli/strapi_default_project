@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_terms_terms",
+  "info": {
+    "displayName": "terms",
+    "icon": "clipboard-list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

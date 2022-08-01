@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_job_description_job_descriptions",
+  "info": {
+    "displayName": "jobDescription",
+    "icon": "align-center",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

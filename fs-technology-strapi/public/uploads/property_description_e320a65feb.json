@@ -1,0 +1,283 @@
+{
+    "type": "set_value",
+    "args": {
+        "errorImage": "assets/error_images/img_image_error.png",
+        "imageError": {
+            "type": "container",
+            "args": {
+                "width": 48,
+                "height": 48,
+                "alignment": "center"
+            },
+            "child": {
+                "type": "asset_image",
+                "args": {
+                    "fit": "contain",
+                    "name": "${errorImage}"
+                }
+            }
+        },
+        "propertyImageList": {
+            "values": [
+                "https://propertyadviser.in/assets/front/images/real-estate-news/s1/what-is-freehold-property-in-india-1054-s1.jpg",
+                "https://propertyadviser.in/assets/front/images/real-estate-news/s1/what-is-freehold-property-in-india-1054-s1.jpg",
+                "https://propertyadviser.in/assets/front/images/real-estate-news/s1/what-is-freehold-property-in-india-1054-s1.jpg",
+                "https://propertyadviser.in/assets/front/images/real-estate-news/s1/what-is-freehold-property-in-india-1054-s1.jpg"
+            ]
+        },
+        "entries": {
+            "values": [
+                {
+                    "count": "302",
+                    "category_name": "Sqare Feet"
+                },
+                {
+                    "count": "3",
+                    "category_name": "Sqare Feet"
+                },
+                {
+                    "count": "2",
+                    "category_name": "Balcony"
+                },
+                {
+                    "count": "2",
+                    "category_name": "Parking"
+                }
+            ]
+        },
+        "imageBoxWidget": {
+            "type": "network_image",
+            "args": {
+                "fit": "cover",
+                "src": "${value}",
+                "errorBuilder": "${imageErrorBuilder}"
+            }
+        },
+        "template": {
+            "type": "column",
+            "args": {
+                "crossAxisAlignment": "center"
+            },
+            "children": [
+                {
+                    "type": "container",
+                    "args": {
+                        "decoration": {
+                            "border": {
+                                "color": "#6d78b6",
+                                "width": 1
+                            },
+                            "borderRadius": {
+                                "type": "all",
+                                "radius": 20
+                            }
+                        },
+                        "height": 80,
+                        "margin": 8,
+                        "width": 80,
+                        "alignment": "center"
+                    },
+                    "child": {
+                        "type": "nullable_text",
+                        "args": {
+                            "text": "${value['value']}",
+                            "style":"${getTextStyle('context','headline4')}"
+                        }
+                    }
+                },
+                {
+                    "type": "nullable_text",
+                    "args": {
+                        "text": "${value['key']}",
+                        "style": "${getTextStyle('context','bodyText2',{'fontSize':13})}"
+                    }
+                }
+            ]
+        }
+    },
+    "child": {
+        "type": "save_context",
+        "args": {
+            "key": "context"
+        },
+        "child": {
+            "type": "scaffold",
+            "args": {
+                "backgroundColor": "${getOveriddenColor('context','background',1)}",
+
+                "body":  {
+                        "type": "single_child_scroll_view",
+                        "args": {
+                            "physics": {
+                                "type": "bouncing"
+                            }
+                        },
+                        "child": {
+                            "type": "column",
+                            "args": {
+                                "crossAxisAlignment": "center"
+                            },
+                            "children": [
+                                {
+                                    "type": "stack",
+                                    "children": [
+                                        {
+                                            "type": "align",
+                                            "args": {
+                                                "alignment": "topLeft"
+                                            },
+                                            "child": {
+                                                "type": "container",
+                                                "args": {
+                                                    "width": "infinity",
+                                                    "height": "300",
+                                                    "color": "#ffcdd2"
+                                                },
+                                                "child": {
+                                                    "type": "image_swiper",
+                                                    "args": {
+                                                        "height": "infinity",
+                                                        "width": "infinity"
+                                                    },
+                                                    "children": "${for_each(propertyImageList['values'], 'imageBoxWidget')}"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "align",
+                                            "args": {
+                                                "alignment": "topLeft"
+                                            },
+                                            "child": {
+                                                "type": "container",
+                                                "args": {
+                                                    "padding": [
+                                                        20,
+                                                        40
+                                                    ]
+                                                },
+                                                "child":{
+                                                    "type": "icon_button",
+                                                    "args": {
+                                                      "onPressed": "${navigate_pop()}",
+                                                      "icon": {
+                                                        "type": "icon",
+                                                        "args": {
+                                                          "icon": {
+                                                            "codePoint": "0xe092",
+                                                            "fontFamily": "MaterialIcons"
+                                                          },
+                                                          "color": "#000000",
+                                                          "size": 25
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "container",
+                                    "args": {
+                                        "padding": [
+                                            20,
+                                            10
+                                        ]
+                                    },
+                                    "child": {
+                                        "type": "column",
+                                        "args": {
+                                            "crossAxisAlignment": "start"
+                                        },
+                                        "children": [
+                                            {
+                                                "type": "row",
+                                                "args": {
+                                                    "mainAxisAlignment": "spaceBetween",
+                                                    "mainAxisSize": "max"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "type": "nullable_text",
+                                                        "args": {
+                                                            "text": "${listing_detail['price']}",
+                                                            "style": "${getTextStyle('context','headline3',{'fontWeight':'w600'})}"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "nullable_text",
+                                                        "args": {
+                                                            "text": "Pratap CHS",
+                                                            "style":"${getTextStyle('context','bodyText2')}" 
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "nullable_text",
+                                                "args": {
+                                                    "text": "${listing_detail['address']}",
+                                                    "style": "${getTextStyle('context','bodyText2')}"
+                                                }
+                                            },
+                                            {
+                                                "type": "sized_box",
+                                                "args": {
+                                                    "height": 20
+                                                }
+                                            },
+                                            {
+                                                "type": "text",
+                                                "args": {
+                                                    "text": "${listing_detail['infoTitle']}",
+                                                    "style": "${getTextStyle('context','subtitle1')}"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "sized_box",
+                                    "args": {
+                                        "height": 150
+                                    },
+                                    "child": {
+                                        "type": "list_view",
+                                        "args": {
+                                            "padding": [
+                                                10,
+                                                0
+                                            ],
+                                            "physics": {
+                                                "type": "bouncing"
+                                            },
+                                            "scrollDirection": "horizontal"
+                                        },
+                                        "children": "${for_in(listing_detail['infoContent'], 'template')}"
+                                    }
+                                },
+                                {
+                                    "type": "padding",
+                                    "args": {
+                                        "padding": [
+                                            20,
+                                            10
+                                        ]
+                                    },
+                                    "child": {
+                                        "type": "nullable_text",
+                                        "args": {
+                                            "text":"${listing_detail['about']}",
+                                            "style":"${getTextStyle('context','bodyText2')}"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                
+            }
+        }
+    }
+}

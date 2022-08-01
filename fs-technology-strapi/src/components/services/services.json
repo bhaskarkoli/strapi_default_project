@@ -1,0 +1,64 @@
+{
+  "collectionName": "components_services_services",
+  "info": {
+    "displayName": "services",
+    "icon": "bicycle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "metaTitle": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "metaDescription": {
+      "type": "text",
+      "required": true
+    },
+    "metaKeywords": {
+      "type": "string",
+      "required": true
+    },
+    "metaAuthor": {
+      "type": "string",
+      "required": true
+    },
+    "detailsPageDescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "logoUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logoAlt": {
+      "type": "string",
+      "required": true
+    },
+    "serviceSubCategory": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-sub-category.service-sub-category",
+      "required": false
+    },
+    "serviceSlug": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    }
+  }
+}

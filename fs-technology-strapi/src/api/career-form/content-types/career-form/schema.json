@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "career_forms",
+  "info": {
+    "singularName": "career-form",
+    "pluralName": "career-forms",
+    "displayName": "career-form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "full_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "mobile": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 12,
+      "required": true
+    },
+    "cover_letter": {
+      "type": "text",
+      "required": true,
+      "minLength": 200,
+      "maxLength": 1000
+    },
+    "position_applied": {
+      "type": "string",
+      "required": true
+    },
+    "experience_required": {
+      "type": "string",
+      "required": true
+    },
+    "candidate_id": {
+      "type": "string",
+      "required": true
+    },
+    "uploaded_resume_url": {
+      "type": "string",
+      "required": true
+    },
+    "education_required": {
+      "type": "string",
+      "required": true
+    },
+    "job_deadline": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_appointment_faq_appointment_faqs",
+  "info": {
+    "displayName": "appointment-faq",
+    "icon": "align-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 50
+    }
+  }
+}

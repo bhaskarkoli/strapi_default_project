@@ -1,0 +1,477 @@
+{
+  "type": "save_context",
+  "args": {
+    "key": "context"
+  },
+  "child": {
+    "type": "set_value",
+    "args": {
+      "greetingTextStyle": {
+        "letterSpacing": 0.5,
+        "fontweight": "bold"
+      },
+      "titleTextStyle": {
+        "fontweight": "bold",
+        "fontSize": 26
+      },
+      "subTitleTextStyle": {
+        "fontSize": 20,
+        "fontweight": "bold"
+      },
+      "listTileSubTitleTextStyle": {
+        "fontSize": 13
+      },
+      "listTileTitleTextStyle": {
+        "fontWeight": "normal"
+      },
+      "tablist": {
+        "values": ["General", "Nurologist", "Orthopedic", "Pediatrician"]
+      },
+      "topRatedItems": {
+        "values": [
+          {
+            "profile": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+            "name": "Dr. Doctor Name",
+            "speciality": "Neurologist",
+            "price": "4.9 R"
+          },
+          {
+            "profile": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+            "name": "Dr. Doctor Name",
+            "speciality": "Neurologist",
+            "price": "4.9 R"
+          },
+          {
+            "profile": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+            "name": "Dr. Doctor Name",
+            "speciality": "Neurologist",
+            "price": "4.9 R"
+          }
+        ]
+      },
+      "nearbyServiceList": {
+        "values": [
+          {
+            "profile": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+            "name": "Dr. Doctor Name",
+            "speciality": "Neurologist",
+            "price": "4.9 R"
+          },
+          {
+            "profile": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+            "name": "Dr. Doctor Name",
+            "speciality": "Neurologist",
+            "price": "4.9 R"
+          },
+          {
+            "profile": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+            "name": "Dr. Doctor Name",
+            "speciality": "Neurologist",
+            "price": "4.9 R"
+          }
+        ]
+      },
+      "buildContentWidget": {
+        "type": "gesture_detector",
+        "args": {
+          "onTap": "${navigate_named('/listing_detail','vendors')}"
+        },
+        "child": {
+          "type": "list_tile",
+          "args": {
+            "leading": {
+              "type": "clip_rrect",
+              "args": {
+                "borderRadius": {
+                  "type": "circular",
+                  "radius": 10
+                }
+              },
+              "child": {
+                "type": "network_image",
+                "args": {
+                  "height": 50,
+                  "width": 50,
+                  "src": "${value['profile']}",
+                  "fit": "cover",
+                  "errorBuilder": "${imageErrorBuilder}"
+                }
+              }
+            },
+            "title": {
+              "type": "nullable_text",
+              "args": {
+                "text": "${value['name']}",
+                "style": "${getTextStyle('context','subtitle1',listTileTitleTextStyle)}"
+              }
+            },
+            "subtitle": {
+              "type": "nullable_text",
+              "args": {
+                "text": "${value['speciality']}",
+                "style": "${getTextStyle('context','bodyText2',listTileSubTitleTextStyle)}"
+              }
+            },
+            "trailing": {
+              "type": "nullable_text",
+              "args": {
+                "text": "${value['price']}",
+                "style": "${getTextStyle('context','bodyText1')}"
+              }
+            }
+          }
+        }
+      },
+      "buildTabListWidget": {
+        "type": "gesture_detector",
+        "args": {
+          "onTap": "${navigate_named('/listing_detail','vendors')}"
+        },
+        "child": {
+          "type": "container",
+          "args": {
+            "padding": {
+              "left": 20,
+              "right": 20,
+              "top": 5,
+              "bottom": 5
+            },
+            "margin": 5,
+            "alignment": "center",
+            "decoration": {
+              "color": "#D9E4EC",
+              "borderRadius": {
+                "type": "all",
+                "radius": 20
+              }
+            }
+          },
+          "child": {
+            "type": "nullable_text",
+            "args": {
+              "text": "${value}",
+              "style": "${getTextStyle('context','bodyText2')}"
+            }
+          }
+        }
+      }
+    },
+    "child": {
+      "type": "scaffold",
+      "args": {
+        "backgroundColor": "${getOveriddenColor('context','background',1)}",
+        "bottomNavigationBar": {
+          "type": "container",
+          "args": {
+            "padding": [10, 10],
+            "height": 60,
+            "decoration": {
+              "color": "#FFFFFF",
+              "boxShadow": [
+                {
+                  "color": "#DCDCDC",
+                  "offset": {
+                    "dy": 2,
+                    "dx": 0
+                  },
+                  "spreadRadius": 5,
+                  "blurRadius": 5
+                }
+              ]
+            }
+          },
+          "child": {
+            "type": "row",
+            "args": {
+              "mainAxisAlignment": "spaceBetween",
+              "mainAxisSize": "max"
+            },
+            "children": [
+              {
+                "type": "container",
+                "args": {
+                  "alignment": "center"
+                },
+                "child": {
+                  "type": "icon_button",
+                  "args": {
+                    "icon": {
+                      "type": "icon",
+                      "args": {
+                        "icon": {
+                          "codePoint": "0xe318",
+                          "fontFamily": "MaterialIcons"
+                        },
+                        "size": 30
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "container",
+                "args": {
+                  "alignment": "center"
+                },
+                "child": {
+                  "type": "icon_button",
+                  "args": {
+                    "icon": {
+                      "type": "icon",
+                      "args": {
+                        "icon": {
+                          "codePoint": "0xe154",
+                          "fontFamily": "MaterialIcons"
+                        },
+                        "size": 30
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "container",
+                "args": {
+                  "alignment": "center"
+                },
+                "child": {
+                  "type": "icon_button",
+                  "args": {
+                    "icon": {
+                      "type": "icon",
+                      "args": {
+                        "icon": {
+                          "codePoint": "0xe401",
+                          "fontFamily": "MaterialIcons"
+                        },
+                        "size": 30
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "container",
+                "args": {
+                  "alignment": "center"
+                },
+                "child": {
+                  "type": "icon_button",
+                  "args": {
+                    "icon": {
+                      "type": "icon",
+                      "args": {
+                        "icon": {
+                          "codePoint": "0xe57f",
+                          "fontFamily": "MaterialIcons"
+                        },
+                        "size": 30
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "appBar": {
+          "type": "app_bar",
+          "args": {
+            "leading": {
+              "type": "icon_button",
+              "args": {
+                "onPressed": "${navigate_pop()}",
+                "icon": {
+                  "type": "icon",
+                  "args": {
+                    "icon": {
+                      "codePoint": "0xe092",
+                      "fontFamily": "MaterialIcons"
+                    },
+                    "color": "#000000",
+                    "size": 25
+                  }
+                }
+              }
+            },
+            "toolbarHeight": 80.0,
+            "elevation": 0,
+            "backgroundColor": "${getOveriddenColor('context','background',1)}",
+            "actions": [
+              {
+                "type": "container",
+                "args": {
+                  "height": 50,
+                  "margin": 8,
+                  "width": 50,
+                  "decoration": {
+                    "color": "#2D2D39",
+                    "shape": "circle"
+                  }
+                }
+              }
+            ],
+            "title": {
+              "type": "container",
+              "args": {
+                "padding": 10
+              },
+              "child": {
+                "type": "column",
+                "args": {
+                  "crossAxisAlignment": "start"
+                },
+                "children": [
+                  {
+                    "type": "nullable_text",
+                    "args": {
+                      "text": "Good Morning",
+                      "style": "${getTextStyle('context','bodyText1',greetingTextStyle)}"
+                    }
+                  },
+                  {
+                    "type": "nullable_text",
+                    "args": {
+                      "text": "Manav Singh",
+                      "style": "${getTextStyle('context','headline4',titleTextStyle)}"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "body": {
+          "type": "single_child_scroll_view",
+          "args": {
+            "physics": {
+              "type": "bouncing"
+            }
+          },
+          "child": {
+            "type": "column",
+            "args": {
+              "crossAxisAlignment": "start"
+            },
+            "children": [
+              {
+                "type": "padding",
+                "args": {
+                  "padding": {
+                    "top": 8,
+                    "bottom": 8
+                  }
+                },
+                "child": {
+                  "type": "sized_box",
+                  "args": {
+                    "height": 45
+                  },
+                  "child": {
+                    "type": "list_view",
+                    "args": {
+                      "padding": [10, 0],
+                      "physics": {
+                        "type": "bouncing"
+                      },
+                      "scrollDirection": "horizontal"
+                    },
+                    "children": "${for_in(tablist['values'], 'buildTabListWidget')}"
+                  }
+                }
+              },
+              {
+                "type": "list_tile",
+                "args": {
+                  "trailing": {
+                    "type": "icon",
+                    "args": {
+                      "icon": {
+                        "codePoint": "0xe09c",
+                        "fontFamily": "MaterialIcons"
+                      },
+                      "size": 25
+                    }
+                  },
+                  "title": {
+                    "type": "nullable_text",
+                    "args": {
+                      "text": "Top Rated",
+                      "style": "${getTextStyle('context','bodyText1',subTitleTextStyle)}"
+                    }
+                  },
+                  "subtitle": {
+                    "type": "nullable_text",
+                    "args": {
+                      "text": "Something",
+                      "style": "${getTextStyle('context','bodyText2',listTileSubTitleTextStyle)}"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "container",
+                "child": {
+                  "type": "list_view",
+                  "args": {
+                    "shrinkWrap": true,
+                    "padding": [10, 0],
+                    "physics": {
+                      "type": "bouncing"
+                    },
+                    "scrollDirection": "vertical"
+                  },
+                  "children": "${for_in(topRatedItems['values'], 'buildContentWidget')}"
+                }
+              },
+              {
+                "type": "list_tile",
+                "args": {
+                  "trailing": {
+                    "type": "icon",
+                    "args": {
+                      "icon": {
+                        "codePoint": "0xe09c",
+                        "fontFamily": "MaterialIcons"
+                      },
+                      "size": 25
+                    }
+                  },
+                  "title": {
+                    "type": "nullable_text",
+                    "args": {
+                      "text": "Nearby Doctor",
+                      "style": "${getTextStyle('context','bodyText1',subTitleTextStyle)}"
+                    }
+                  },
+                  "subtitle": {
+                    "type": "nullable_text",
+                    "args": {
+                      "text": "Kamothe, Mumbai",
+                      "style": "${getTextStyle('context','bodyText2')}"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "container",
+                "child": {
+                  "type": "list_view",
+                  "args": {
+                    "shrinkWrap": true,
+                    "padding": [10, 0],
+                    "physics": {
+                      "type": "bouncing"
+                    },
+                    "scrollDirection": "vertical"
+                  },
+                  "children": "${for_in(nearbyServiceList['values'], 'buildContentWidget')}"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
